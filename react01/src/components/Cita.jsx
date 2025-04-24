@@ -8,7 +8,8 @@ const Cita = (props) => {
             <p>Dueño: <span>{props.dueno}</span></p>
             <p>Fecha: <span>{props.fecha}</span></p>
             <p>Hora: <span>{props.hora}</span></p>
-            <p>Sintomas: <span>{props.sinotmas}</span></p><button class="button elimnar u-full-width">Eliminar ×</button>
+            <p>Sintomas: <span>{props.sintomas}</span></p>
+            <button class="button elimnar u-full-width">Eliminar ×</button>
         </div>
     )
 }
