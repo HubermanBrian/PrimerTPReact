@@ -1,8 +1,10 @@
 import React from "react"
 import "./Cita.css"
 
+
 const Cita = (props) => {
-    return (          
+    return (
+
         <div class="cita">
             <p>Mascota: <span>{props.mascota}</span></p>
             <p>Dueño: <span>{props.dueno}</span></p>
