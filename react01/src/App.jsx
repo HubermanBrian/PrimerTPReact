@@ -4,6 +4,8 @@ import Formulario from "./components/Form";
 import Cita from "./components/Cita.jsx";
 import Listado from "./components/Listado.jsx";
 
+
+//PARA CONECTAR LOS DATOS DEL FORM CON LA CARD CITA SE CONECTA MEDIANTE APP.JSX
 function App() {
   const [citas, setCitas] = useState([
     {
@@ -32,6 +34,8 @@ function App() {
     }
   ]);
 
+
+  //se agrega cita al array
   const agregarCita = (nuevaCita) => {
     nuevaCita.id = Date.now();
     setCitas([...citas, nuevaCita]);
@@ -42,8 +46,11 @@ function App() {
     setCitas(nuevasCitas);
   };
 
+
+    //Muestra la cita
   return (
     <>
+    
       <h1>ADMINISTRADOR DE PACIENTES</h1>
       <div className="container">
         <div className="row">

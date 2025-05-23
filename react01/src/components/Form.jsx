@@ -9,15 +9,17 @@ function Formulario({ agregarCita }) {
   const [hora, setHora] = useState("");
   const [sintomas, setSintomas] = useState("");
 
+
+  //Creo tipo la card de las citas
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const nuevaCita = {
-      mascota,
-      dueno,
-      fecha,
-      hora,
-      sintomas
+      mascota: mascota,
+      dueno: dueno,
+      fecha: fecha,
+      hora: hora,
+      sintomas: sintomas
     };
 
     agregarCita(nuevaCita);
@@ -29,6 +31,7 @@ function Formulario({ agregarCita }) {
     setSintomas("");
   };
 
+  //se completan los datos del form y cuando el input este on change se cambian los datos del input por los datos nuevos
   return (
     <>
       <form onSubmit={handleSubmit}>
