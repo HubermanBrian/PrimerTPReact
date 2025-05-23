@@ -10,4 +10,3 @@ const Listado = ({ children }) => {
 };
 
 export default Listado;
-//pureba aa

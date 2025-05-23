@@ -1,20 +1,22 @@
-import React from "react"
-import "./Cita.css"
+import React from "react";
+import "./Cita.css";
 
+const Cita = ({ id, mascota, dueno, fecha, hora, sintomas, eliminarCita }) => {
+  return (
+    <div className="cita">
+      <p>Mascota: <span>{mascota}</span></p>
+      <p>Dueño: <span>{dueno}</span></p>
+      <p>Fecha: <span>{fecha}</span></p>
+      <p>Hora: <span>{hora}</span></p>
+      <p>Sintomas: <span>{sintomas}</span></p>
+      <button
+        className="button eliminar u-full-width"
+        onClick={() => eliminarCita(id)}
+      >
+        Eliminar ×
+      </button>
+    </div>
+  );
+};
 
-const Cita = (props) => {
-    return (
-
-        <div class="cita">
-            <p>Mascota: <span>{props.mascota}</span></p>
-            <p>Dueño: <span>{props.dueno}</span></p>
-            <p>Fecha: <span>{props.fecha}</span></p>
-            <p>Hora: <span>{props.hora}</span></p>
-            <p>Sintomas: <span>{props.sintomas}</span></p>
-            <button class="button elimnar u-full-width">Eliminar ×</button>
-        </div>
-    )
-}
-
-export default Cita
-
+export default Cita;

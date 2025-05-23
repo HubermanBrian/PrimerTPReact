@@ -1,9 +1,47 @@
+import React, { useState } from "react";
 import "./App.css";
 import Formulario from "./components/Form";
 import Cita from "./components/Cita.jsx";
 import Listado from "./components/Listado.jsx";
 
 function App() {
+  const [citas, setCitas] = useState([
+    {
+      id: 1,
+      mascota: "Nina",
+      dueno: "Martin",
+      fecha: "2021-08-05",
+      hora: "08:20",
+      sintomas: "Le duele la pierna"
+    },
+    {
+      id: 2,
+      mascota: "Sifon",
+      dueno: "Flecha",
+      fecha: "2023-08-05",
+      hora: "09:24",
+      sintomas: "Duerme mucho"
+    },
+    {
+      id: 3,
+      mascota: "Floki",
+      dueno: "Ari",
+      fecha: "2023-08-05",
+      hora: "16:15",
+      sintomas: "No está comiendo"
+    }
+  ]);
+
+  const agregarCita = (nuevaCita) => {
+    nuevaCita.id = Date.now();
+    setCitas([...citas, nuevaCita]);
+  };
+
+  const eliminarCita = (id) => {
+    const nuevasCitas = citas.filter(cita => cita.id !== id);
+    setCitas(nuevasCitas);
+  };
+
   return (
     <>
       <h1>ADMINISTRADOR DE PACIENTES</h1>
@@ -11,31 +49,17 @@ function App() {
         <div className="row">
           <div className="one-half column">
             <h2>Crear mi Cita</h2>
-            <Formulario />
+            <Formulario agregarCita={agregarCita} />
           </div>
           <div className="one-half column">
             <Listado>
-              <Cita
-                nombre="Nina"
-                dueno="Martin"
-                fecha="2021-08-05"
-                hora="08:20"
-                sintomas="Le duele la pierna"
-              />
-              <Cita
-                nombre="Sifon"
-                dueno="Flecha"
-                fecha="2023-08-05"
-                hora="09:24"
-                sintomas="Duerme mucho"
-              />
-              <Cita
-                nombre="Floki"
-                dueno="Ari"
-                fecha="2023-08-05"
-                hora="16:15"
-                sintomas="No está comiendo"
-              />
+              {citas.map(cita => (
+                <Cita
+                  key={cita.id}
+                  {...cita}
+                  eliminarCita={eliminarCita}
+                />
+              ))}
             </Listado>
           </div>
         </div>
