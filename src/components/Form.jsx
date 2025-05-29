@@ -9,7 +9,6 @@ function Formulario({ agregarCita }) {
   const [hora, setHora] = useState("");
   const [sintomas, setSintomas] = useState("");
 
-
   //Creo tipo la card de las citas
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +18,7 @@ function Formulario({ agregarCita }) {
       dueno: dueno,
       fecha: fecha,
       hora: hora,
-      sintomas: sintomas
+      sintomas: sintomas,
     };
 
     agregarCita(nuevaCita);
@@ -39,34 +38,34 @@ function Formulario({ agregarCita }) {
           title={"Nombre Mascota"}
           className={"mascota u-full-width"}
           value={mascota}
-          onChange={e => setMascota(e.target.value)}
+          onChange={(e) => setMascota(e.target.value)}
         />
         <Input
           title={"Nombre Dueño"}
           className={"u-full-width"}
           value={dueno}
-          onChange={e => setDueno(e.target.value)}
+          onChange={(e) => setDueno(e.target.value)}
         />
         <label>Fecha</label>
         <input
           type="date"
           className="u-full-width"
           value={fecha}
-          onChange={e => setFecha(e.target.value)}
+          onChange={(e) => setFecha(e.target.value)}
         />
         <label>Hora</label>
         <input
           type="time"
           className="u-full-width"
           value={hora}
-          onChange={e => setHora(e.target.value)}
+          onChange={(e) => setHora(e.target.value)}
         />
         <label>Sintomas</label>
         <textarea
           name="sintomas"
           className="u-full-width"
           value={sintomas}
-          onChange={e => setSintomas(e.target.value)}
+          onChange={(e) => setSintomas(e.target.value)}
         ></textarea>
         <button type="submit" className="u-full-width button-primary">
           Agregar Cita
